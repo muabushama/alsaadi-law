@@ -41,18 +41,18 @@ export function RequestForm() {
   }
 
   return (
-    <section id="request" className="bg-ink py-20 text-paper">
+    <section id="request" className="bg-ink py-12 text-paper sm:py-16 lg:py-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Reveal className="text-center">
           <p className="text-sm text-brass">تقديم الطلب</p>
-          <h2 className="mt-2 text-3xl font-medium text-paper">
+          <h2 className="mt-2 text-2xl font-medium text-paper sm:text-3xl">
             تقديم طلب استشارة أو خدمة
           </h2>
         </Reveal>
         <Reveal variant="scaleReveal">
           <form
             onSubmit={onSubmit}
-            className="mt-10 space-y-5 border border-[#0a1624] bg-ink-2 p-6 sm:p-10"
+            className="mt-8 space-y-5 border border-[#0a1624] bg-ink-2 p-4 sm:mt-10 sm:p-8 md:p-10"
           >
             <Field label="الاسم بالكامل *" name="clientName" required />
             <Field label="رقم الهاتف *" name="phone" required dir="ltr" />
@@ -94,7 +94,7 @@ export function RequestForm() {
                 multiple
                 accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
                 onChange={(e) => setFiles(Array.from(e.target.files ?? []).slice(0, 5))}
-                className="w-full text-sm text-stone file:ml-3 file:border-0 file:bg-char file:px-4 file:py-2 file:text-brass"
+                className="w-full max-w-full text-sm text-stone file:ml-3 file:max-w-full file:border-0 file:bg-char file:px-3 file:py-2 file:text-brass sm:file:px-4"
               />
               {files.length > 0 ? (
                 <ul className="mt-2 space-y-1 text-xs text-brass">
@@ -107,7 +107,7 @@ export function RequestForm() {
             <motion.button
               whileTap={{ scale: 0.98 }}
               disabled={status === "loading"}
-              className="hero-cta w-full py-4 text-lg font-semibold disabled:opacity-70"
+              className="hero-cta w-full py-3.5 text-base font-semibold disabled:opacity-70 sm:py-4 sm:text-lg"
             >
               {status === "loading" ? "جارٍ الحفظ..." : "إرسال الطلب"}
             </motion.button>

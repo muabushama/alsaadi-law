@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -10,6 +10,12 @@ const ibm = IBM_Plex_Sans_Arabic({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,7 +42,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ar" dir="rtl" data-scroll-behavior="smooth" className={`${ibm.variable} h-full`}>
-      <body className="min-h-full bg-paper font-sans text-char antialiased">
+      <body className="min-h-full overflow-x-hidden bg-paper font-sans text-char antialiased">
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>
         </noscript>

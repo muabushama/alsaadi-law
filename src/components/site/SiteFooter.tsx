@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { SecretLogo } from "@/components/site/SecretLogo";
 import { serviceCategories } from "@/lib/services";
 
 export function SiteFooter() {
@@ -7,13 +7,7 @@ export function SiteFooter() {
     <footer id="contact" className="border-t border-[#0a1624] bg-ink-2 py-14 text-paper">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-3">
         <div>
-          <Image
-            src="/images/logo.png"
-            alt="مكتب السعدي للاستشارات القانونية والخدمات الإجرائية"
-            width={280}
-            height={180}
-            className="h-20 w-auto max-w-[260px] object-contain"
-          />
+          <SecretLogo className="h-16 w-auto max-w-[min(100%,220px)] object-contain sm:h-20 sm:max-w-[260px]" />
           <p className="mt-4 text-sm leading-7 text-stone">
             منظومة خدمات قانونية وإجرائية للأفراد والشركات، مع متابعة منظمة وسرية مهنية.
           </p>
@@ -40,12 +34,9 @@ export function SiteFooter() {
           <p className="mt-6 text-xs text-stone">
             بيانات التواصل الهاتفي تُضاف فور اعتماد الأرقام الرسمية للمكتب.
           </p>
-          <Link href="/admin/login" className="mt-4 inline-block text-[11px] text-stone hover:text-brass">
-            دخول الإدارة
-          </Link>
         </div>
       </div>
-      <p className="mt-10 text-center text-xs text-stone">
+      <p className="mt-10 px-4 text-center text-xs leading-6 text-stone">
         جميع الحقوق محفوظة © {new Date().getFullYear()} مكتب السعدي للاستشارات القانونية والخدمات الإجرائية.
       </p>
     </footer>

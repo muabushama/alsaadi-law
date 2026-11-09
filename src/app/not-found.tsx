@@ -10,7 +10,7 @@ export default function NotFound() {
         <p className="text-wine">404</p>
         <h1 className="mt-2 text-3xl font-medium">الصفحة غير موجودة</h1>
         <p className="mt-3 text-stone">تحقق من الرابط أو عد إلى الصفحة الرئيسية.</p>
-        <Link href="/" className="mt-6 inline-block bg-ink px-5 py-3 font-semibold text-btn">
+        <Link href="/" className="hero-cta mt-6 inline-flex w-full px-5 py-3 font-semibold sm:w-auto">
           العودة للرئيسية
         </Link>
       </main>

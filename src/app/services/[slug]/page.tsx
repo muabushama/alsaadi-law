@@ -36,10 +36,10 @@ export default async function ServicePage({
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 text-char">
-        <ServiceIcon name={service.icon} className="h-12 w-12 text-wine" />
-        <h1 className="mt-4 text-4xl font-medium">{service.title}</h1>
-        <p className="mt-4 text-lg leading-9 text-stone">{service.details}</p>
+      <main className="mx-auto max-w-3xl px-4 py-10 text-char sm:px-6 sm:py-16">
+        <ServiceIcon name={service.icon} className="h-10 w-10 text-wine sm:h-12 sm:w-12" />
+        <h1 className="mt-4 text-2xl font-medium sm:text-4xl">{service.title}</h1>
+        <p className="mt-4 text-base leading-8 text-stone sm:text-lg sm:leading-9">{service.details}</p>
         <ul className="mt-8 space-y-2">
           {service.items.map((item) => (
             <li key={item} className="border border-line bg-ivory px-4 py-3">
@@ -49,7 +49,7 @@ export default async function ServicePage({
         </ul>
         <Link
           href="/#request"
-          className="mt-8 inline-block bg-ink px-5 py-3 font-semibold text-btn"
+          className="hero-cta mt-8 inline-flex w-full px-5 py-3 font-semibold sm:w-auto"
         >
           تقديم طلب لهذه الخدمة
         </Link>

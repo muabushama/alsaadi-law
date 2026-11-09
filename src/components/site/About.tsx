@@ -2,18 +2,18 @@ import { Reveal } from "@/components/motion/Reveal";
 
 export function About() {
   return (
-    <section id="about" className="bg-paper py-20 text-char">
+    <section id="about" className="bg-paper py-12 text-char sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <p className="text-sm text-wine">عن المكتب</p>
-          <h2 className="mt-2 text-3xl font-medium sm:text-4xl">
+          <h2 className="mt-2 text-2xl font-medium leading-snug sm:text-3xl md:text-4xl">
             مؤسسة قانونية بمسار واضح وإجراءات منظمة
           </h2>
           <div className="mt-4 h-px w-12 bg-wine" />
         </Reveal>
         <div className="mt-8 grid gap-8 lg:grid-cols-2">
           <Reveal variant="slideStart">
-            <p className="text-lg leading-9 text-stone">
+            <p className="text-base leading-8 text-stone sm:text-lg sm:leading-9">
               يعمل مكتب السعدي على تقديم الاستشارات القانونية والخدمات الإجرائية
               للأفراد والشركات، مع متابعة الملفات وفق طبيعة كل حالة والالتزام
               بسرية المعلومات ووضوح الخطوات. لا نعد بنتائج محددة؛ بل نوضح المسار

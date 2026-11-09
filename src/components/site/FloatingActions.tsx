@@ -28,7 +28,7 @@ export function FloatingActions() {
           style={{ transform: `scaleX(${progress})` }}
         />
       </div>
-      <div className="fixed bottom-5 left-5 z-50 flex flex-col gap-2">
+      <div className="fixed bottom-4 left-4 z-50 flex flex-col gap-2 sm:bottom-5 sm:left-5">
         {whatsapp ? (
           <a
             href={`https://wa.me/${whatsapp.replace(/\D/g, "")}`}

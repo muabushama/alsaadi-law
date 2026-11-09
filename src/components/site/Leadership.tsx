@@ -21,13 +21,13 @@ const leaders = [
 
 export function Leadership() {
   return (
-    <section id="leadership" className="bg-ink py-20 text-paper">
+    <section id="leadership" className="bg-ink py-12 text-paper sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal className="text-center">
           <p className="text-sm text-brass">القيادة</p>
-          <h2 className="mt-2 text-3xl font-medium sm:text-4xl">الهيكل التنفيذي</h2>
+          <h2 className="mt-2 text-2xl font-medium sm:text-3xl md:text-4xl">الهيكل التنفيذي</h2>
         </Reveal>
-        <div className="mt-12 grid gap-px bg-[#0a1624] md:grid-cols-2">
+        <div className="mt-8 grid gap-px bg-[#0a1624] sm:mt-12 md:grid-cols-2">
           {leaders.map((leader, i) => (
             <Reveal key={leader.name} variant={i === 0 ? "slideStart" : "slideEnd"}>
               <motion.article
@@ -35,7 +35,7 @@ export function Leadership() {
                 transition={{ duration: 0.3 }}
                 className="bg-ink-2"
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-64 overflow-hidden sm:h-80">
                   <Image
                     src={leader.image}
                     alt={`صورة هوية بصرية لـ ${leader.name}`}

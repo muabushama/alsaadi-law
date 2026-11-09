@@ -11,13 +11,15 @@ const items = [
 
 export function WhyUs() {
   return (
-    <section id="why" className="bg-ink-2 py-20 text-paper">
+    <section id="why" className="bg-ink-2 py-12 text-paper sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <Reveal className="text-center">
+        <Reveal className="text-center px-1">
           <p className="text-sm text-brass">التميّز في الخدمة</p>
-          <h2 className="mt-2 text-3xl font-medium sm:text-4xl">لماذا تختار مكتب السعدي؟</h2>
+          <h2 className="mt-2 text-2xl font-medium leading-snug sm:text-3xl md:text-4xl">
+            لماذا تختار مكتب السعدي؟
+          </h2>
         </Reveal>
-        <div className="mt-12 grid gap-px bg-[#0a1624] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-px bg-[#0a1624] sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <Reveal key={item.title} variant="fadeUp" delay={i * 0.05}>
               <div className="bg-ink p-6">

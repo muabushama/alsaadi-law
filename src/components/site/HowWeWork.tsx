@@ -25,16 +25,16 @@ const steps = [
 
 export function HowWeWork() {
   return (
-    <section className="bg-ink py-20 text-paper">
+    <section className="bg-ink py-12 text-paper sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal className="text-center">
           <p className="text-sm text-brass">آلية العمل</p>
-          <h2 className="mt-2 text-3xl font-medium sm:text-4xl">كيف نعمل</h2>
+          <h2 className="mt-2 text-2xl font-medium sm:text-3xl md:text-4xl">كيف نعمل</h2>
           <div className="mx-auto mt-4 h-px w-12 bg-wine" />
         </Reveal>
 
-        <ol className="relative mt-14 grid gap-6 md:grid-cols-5">
-          <div className="pointer-events-none absolute top-7 right-0 left-0 hidden h-px bg-gradient-to-l from-transparent via-brass/70 to-transparent md:block" />
+        <ol className="relative mt-10 grid gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 xl:grid-cols-5">
+          <div className="pointer-events-none absolute top-7 right-0 left-0 hidden h-px bg-gradient-to-l from-transparent via-brass/70 to-transparent xl:block" />
           {steps.map((step, i) => (
             <Reveal key={step.title} variant="fadeUp" delay={i * 0.07}>
               <li className="relative flex h-full flex-col">

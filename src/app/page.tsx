@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Preloader />
       <SiteHeader />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <About />
         <Leadership />
