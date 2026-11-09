@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
-  // Hostinger Node images ship an older glibc than native Next SWC needs.
-  experimental: {
-    useWasmBinary: true,
-  },
+  // Hostinger's glibc is older than native Next SWC; skip on Windows where native works.
+  ...(process.platform === "linux"
+    ? { experimental: { useWasmBinary: true } }
+    : {}),
   turbopack: {
     rules: {
       "*.css": {
