@@ -2,11 +2,13 @@ import { NextResponse } from "next/server";
 import type { Prisma } from "@prisma/client";
 import type { RequestStatus } from "@/lib/status";
 import { prisma } from "@/lib/prisma";
+import { ensureSchema } from "@/lib/ensure-schema";
 import { requireAdmin } from "@/lib/require-admin";
 
 export async function GET(request: Request) {
   const denied = await requireAdmin();
   if (denied) return denied;
+  await ensureSchema();
 
   const { searchParams } = new URL(request.url);
   const q = searchParams.get("q")?.trim() ?? "";

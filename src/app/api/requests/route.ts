@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { ensureSchema } from "@/lib/ensure-schema";
 import {
   isAllowedFile,
   MAX_FILE_BYTES,
@@ -52,6 +53,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: `صيغة الملف ${file.name} غير مدعومة.` }, { status: 400 });
     }
   }
+
+  await ensureSchema();
 
   const prefix = todayPrefix();
   const count = await prisma.request.count({

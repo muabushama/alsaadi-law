@@ -39,6 +39,12 @@ export function SiteFooter() {
       <p className="mt-10 px-4 text-center text-xs leading-6 text-stone">
         جميع الحقوق محفوظة © {new Date().getFullYear()} مكتب السعدي للاستشارات القانونية والخدمات الإجرائية.
       </p>
+      <p className="mt-3 px-4 text-center text-[11px] leading-6 text-[#d4c7a0]">
+        Powered by PIXEL 01 —{" "}
+        <a href="tel:01034029665" className="text-brass hover:underline" dir="ltr">
+          01034029665
+        </a>
+      </p>
     </footer>
   );
 }

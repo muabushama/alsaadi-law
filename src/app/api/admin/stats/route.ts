@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { ensureSchema } from "@/lib/ensure-schema";
 import { requireAdmin } from "@/lib/require-admin";
 
 export async function GET() {
   const denied = await requireAdmin();
   if (denied) return denied;
+  await ensureSchema();
 
   const [total, byStatus, byService] = await Promise.all([
     prisma.request.count(),
