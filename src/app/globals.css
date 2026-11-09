@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #01050b;
+  --ink-2: #040910;
+  --char: #050b14;
+  --wine: #c9a227;
+  --brass: #e8c547;
+  --paper: #f6f3ea;
+  --ivory: #ede6d4;
+  --line: #d8cdae;
+  --stone: #6b7a8f;
+  --navy: var(--ink);
+  --navy-2: var(--ink-2);
+  --surface: #07101a;
+  --gold: var(--wine);
+  --gold-light: var(--brass);
+  --btn: #d9b883;
+  --cream: var(--paper);
+  --muted: var(--stone);
+  --white: #fffdf8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: #01050b;
+  --color-ink-2: #040910;
+  --color-char: #050b14;
+  --color-wine: #c9a227;
+  --color-brass: #e8c547;
+  --color-paper: #f6f3ea;
+  --color-ivory: #ede6d4;
+  --color-line: #d8cdae;
+  --color-stone: #6b7a8f;
+  --color-navy: #01050b;
+  --color-navy-2: #040910;
+  --color-surface: #07101a;
+  --color-gold: #c9a227;
+  --color-gold-light: #e8c547;
+  --color-btn: #d9b883;
+  --color-cream: #f6f3ea;
+  --color-muted: #6b7a8f;
+  --font-sans: var(--font-ibm);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--char);
+  font-family: var(--font-ibm), "Segoe UI", Tahoma, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--wine) 40%, transparent);
+  color: var(--ink);
+}
+
+.hero-cta {
+  border: 1px solid var(--brass);
+  background: linear-gradient(135deg, #01050b 0%, #16110a 42%, #3a2e14 100%);
+  color: var(--btn);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-cta:hover {
+  border-color: var(--btn);
+  background: linear-gradient(135deg, #05080e 0%, #241c0e 45%, #4a3b18 100%);
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brass), transparent);
+}
+
+.soft-card {
+  box-shadow: none;
+}
+
+.service-card {
+  background: linear-gradient(180deg, #10182a 0%, #070b14 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(232, 197, 71, 0.55),
+    0 10px 36px rgba(0, 0, 0, 0.45);
+}
+
+.scroll-progress {
+  transform-origin: right;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--brass);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link[data-active="true"]::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (scripting: none) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
 }

@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: alsaadi
+      MYSQL_USER: alsaadi
+      MYSQL_PASSWORD: alsaadi
+      MYSQL_ROOT_PASSWORD: alsaadi_root
+    ports:
+      - "3306:3306"
+    volumes:
+      - alsaadi_mysql:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+volumes:
+  alsaadi_mysql:

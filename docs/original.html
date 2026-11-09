@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتب السعدي للاستشارات القانونية والخدمات الإجرائية</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0f172a',
+                            900: '#0b1120',
+                            950: '#050811',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-slate-950">
+
+    <!-- Navbar Header -->
+    <header class="bg-navy-950/90 backdrop-blur-md border-b border-gold-600/30 sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 select-none group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-950 text-2xl shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-xl text-white tracking-wide">مكتب السعدي</h1>
+                    <p class="text-xs text-gold-400 font-medium">للاستشارات القانونية والخدمات الإجرائية</p>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
+                <a href="#about" class="text-slate-300 hover:text-gold-400 transition-colors">الهيكل التنفيذي</a>
+                <a href="#services" class="text-slate-300 hover:text-gold-400 transition-colors">الخدمات والإجراءات</a>
+                <a href="#request" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-bold px-5 py-2.5 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5">تقديم طلب</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-navy-950 via-navy-900 to-slate-900 py-20 lg:py-28 overflow-hidden border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-sm font-semibold mb-6">
+                <i class="fa-solid fa-shield-halved"></i> المؤسسة القانونية الأكثر اعتماداً ورئاسة للحلول المعقدة
+            </div>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                دفاع متكامل، تأسيس شركات، وتصاريح <span class="bg-gradient-to-r from-gold-400 via-amber-300 to-gold-500 bg-clip-text text-transparent">الذهب والتعدين</span>
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                منظومة إجرائية متخصصة تحت إشراف نخبة من الدكاترة والمستشارين في قضايا النيابات والمحاكم العسكرية، وتأسيس كافة أنواع الشركات، واستخراج موافقات وتصاريح تداول واستخراج الذهب والمعادن النفيسة في مصر.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#request" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-gold-500/10 text-lg transition-all transform hover:-translate-y-1">
+                    تقديم طلب خدمة جديد <i class="fa-solid fa-arrow-left mr-2"></i>
+                </a>
+                <a href="#services" class="bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold px-8 py-4 rounded-xl text-lg transition-all">
+                    استعراض التخصصات
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="about" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-gold-400 font-bold text-sm tracking-wider uppercase mb-2">القيادة والإدارة</h3>
+                <h4 class="text-3xl sm:text-4xl font-extrabold text-white">الهيكل التنفيذي للمكتب</h4>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Leader 1 -->
+                <div class="bg-navy-900 border border-slate-800 rounded-2xl p-8 text-center relative overflow-hidden group hover:border-gold-500/50 transition-all duration-300 shadow-xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl mx-auto flex items-center justify-center text-navy-950 text-3xl font-black mb-6 shadow-lg shadow-gold-500/20">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h5 class="text-xl font-bold text-white mb-1">المستشارة / ريم سعدي</h5>
+                    <p class="text-gold-400 font-semibold text-sm mb-4">دكتوراه في القانون والمحاكم الجنائية والنيابات العسكرية</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        قيادة ملفات الدفاع أمام النيابات العسكرية والمحاكم الجنائية العليا، وإعداد الأسانيد القانونية وصحف الطعون وإجراءات النقض المعقدة.
+                    </p>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="bg-navy-900 border border-slate-800 rounded-2xl p-8 text-center relative overflow-hidden group hover:border-gold-500/50 transition-all duration-300 shadow-xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl mx-auto flex items-center justify-center text-navy-950 text-3xl font-black mb-6 shadow-lg shadow-gold-500/20">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h5 class="text-xl font-bold text-white mb-1">أ / بهاء الجعفري</h5>
+                    <p class="text-gold-400 font-semibold text-sm mb-4">المؤسس التنفيذي (CEO)</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        الإشراف على الخطط الإستراتيجية لتأسيس الشركات والتراخيص الاستثمارية وتراخيص التعدين والذهب، وإبرام التعاقدات والاتفاقيات الشاملة.
+                    </p>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="bg-navy-900 border border-slate-800 rounded-2xl p-8 text-center relative overflow-hidden group hover:border-gold-500/50 transition-all duration-300 shadow-xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl mx-auto flex items-center justify-center text-navy-950 text-3xl font-black mb-6 shadow-lg shadow-gold-500/20">
+                        <i class="fa-solid fa-bars-progress"></i>
+                    </div>
+                    <h5 class="text-xl font-bold text-white mb-1">أ / أحمد سعدي</h5>
+                    <p class="text-gold-400 font-semibold text-sm mb-4">مدير الإدارة العامة</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        إدارة ملفات العملاء والتنسيق الميداني والإجرائي لدى الجهات والمؤسسات الحكومية واللجان القضائية لضمان سرعة إنجاز الخدمات.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-navy-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-gold-400 font-bold text-sm tracking-wider uppercase mb-2">تخصصاتنا الإجرائية</h3>
+                <h4 class="text-3xl sm:text-4xl font-extrabold text-white">الخدمات القانونية والتراخيص</h4>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-navy-900/60 border border-slate-800 rounded-2xl p-8 hover:border-gold-500/40 transition-all">
+                    <div class="text-gold-400 text-3xl mb-4"><i class="fa-solid fa-coins"></i></div>
+                    <h5 class="text-xl font-bold text-white mb-3">تصاريح وتعدين الذهب</h5>
+                    <p class="text-slate-400 text-sm mb-4">إنهاء كافة التراخيص الإجرائية الخاصة بالتعدين واستخراج وتداول الذهب والمعادن النفيسة.</p>
+                    <ul class="text-slate-300 text-xs space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> تصاريح مصلحة الدمغة والموازين</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> موافقات هيئة الثروة المعدنية والتعدين</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> الإجراءات الأمنية لتأمين النقل والشحن</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-navy-900/60 border border-slate-800 rounded-2xl p-8 hover:border-gold-500/40 transition-all">
+                    <div class="text-gold-400 text-3xl mb-4"><i class="fa-solid fa-building-flag"></i></div>
+                    <h5 class="text-xl font-bold text-white mb-3">تأسيس الشركات والتراخيص</h5>
+                    <p class="text-slate-400 text-sm mb-4">استخراج تراخيص التشغيل وتأسيس كبرى الكيانات الاستثمارية والتجارية في مصر.</p>
+                    <ul class="text-slate-300 text-xs space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> شركات المساهمة، المسؤولية المحدودة والأنشطة الفردية</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> السجل التجاري والبطاقة الضريبية وهيئة الاستثمار</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> تراخيص المصانع والمحلات والحماية المدنية</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-navy-900/60 border border-slate-800 rounded-2xl p-8 hover:border-gold-500/40 transition-all">
+                    <div class="text-gold-400 text-3xl mb-4"><i class="fa-solid fa-gavel"></i></div>
+                    <h5 class="text-xl font-bold text-white mb-3">الجنايات والنيابات العسكرية</h5>
+                    <p class="text-slate-400 text-sm mb-4">تمثيل دفاع متكامل وخبرة أكاديمية وعملية متخصصة في المحاكم والنيابات.</p>
+                    <ul class="text-slate-300 text-xs space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> قضايا النيابات والمحاكم العسكرية</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> الجنايات الكبرى والطعون بالنقض</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> إنهاء الحبس الاحتياطي وأوامر المنع</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Form Section -->
+    <section id="request" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="bg-navy-900 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl relative">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">تقديم طلب إجراء قانوني</h3>
+                    <p class="text-slate-400 text-sm">قم بتعبئة البيانات وسيقوم فريق الإدارة بالتواصل معك ومباشرة الإجراءات.</p>
+                </div>
+
+                <form id="clientForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-slate-200 text-sm font-bold mb-2">اسم العميل بالكامل *</label>
+                        <input type="text" id="clientName" required placeholder="أدخل اسمك كما هو بالمستندات" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-200 text-sm font-bold mb-2">رقم الهاتف / الواتساب *</label>
+                        <input type="tel" id="clientPhone" required placeholder="مثال: 01000000000" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-200 text-sm font-bold mb-2">نوع الخدمة المطلوب إجراءاتها *</label>
+                        <select id="serviceType" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                            <option value="">-- اختر نوع الخدمة --</option>
+                            <option value="تصاريح ذهب وتعدين">تصاريح ذهب وتعدين وتجارة معادن</option>
+                            <option value="تأسيس شركة / تراخيص">تأسيس شركة / تراخيص تشغيل</option>
+                            <option value="قضايا جنايات ونيابات عسكرية">قضايا جنايات ونيابات عسكرية</option>
+                            <option value="استشارة قانونية عامة">استشارة قانونية عامة</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-200 text-sm font-bold mb-2">تفاصيل الطلب أو الموضوع</label>
+                        <textarea id="clientNotes" rows="4" placeholder="اكتب نبذة عن الإجراء أو الموضوع المطلوب..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 transition-colors"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-200 text-sm font-bold mb-2">إرفاق ملف أو مستند (اختياري)</label>
+                        <input type="file" id="clientFile" class="w-full text-slate-400 text-sm file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:bg-slate-800 file:text-gold-400 hover:file:bg-slate-700 cursor-pointer">
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-extrabold py-4 rounded-xl shadow-lg transition-all text-lg">
+                        إرسال الطلب رسمياً <i class="fa-solid fa-paper-plane mr-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Admin Login Button -->
+    <footer class="bg-navy-950 border-t border-slate-800 py-10 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <p class="text-sm text-slate-400">جميع الحقوق محفوظة &copy; مكتب السعدي للاستشارات القانونية والخدمات الإجرائية.</p>
+            <p class="text-slate-500">
+                تحت إشراف د/ ريم سعدي • CEO أ/ بهاء الجعفري • مدير الإدارة أ/ أحمد سعدي
+            </p>
+            <!-- Direct Explicit Admin Button -->
+            <div class="pt-2">
+                <button onclick="showLoginModal()" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-gold-400 border border-slate-700 font-bold px-4 py-2 rounded-xl text-xs transition-all cursor-pointer">
+                    <i class="fa-solid fa-lock"></i> دخول إدارة المكتب (لوحة التحكم)
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Password Login Modal (Replaces browser prompt) -->
+    <div id="loginModal" class="fixed inset-0 bg-navy-950/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-navy-900 border border-gold-500/40 rounded-2xl w-full max-w-md p-6 shadow-2xl relative">
+            <button onclick="hideLoginModal()" class="absolute top-4 left-4 text-slate-400 hover:text-white text-xl font-bold">&times;</button>
+            
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-gold-500/20 text-gold-400 rounded-xl mx-auto flex items-center justify-center text-xl mb-3">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">تسجيل دخول إدارة المكتب</h3>
+                <p class="text-xs text-slate-400">أدخل كلمة المرور السرية للوصول إلى لوحة التحكم</p>
+            </div>
+
+            <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+                <div>
+                    <input type="password" id="adminPasswordInput" required placeholder="أدخل كلمة المرور..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-center tracking-widest text-lg focus:outline-none focus:border-gold-500">
+                    <p id="loginError" class="text-red-400 text-xs mt-2 text-center hidden"><i class="fa-solid fa-circle-exclamation"></i> كلمة المرور غير صحيحة!</p>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 text-navy-950 font-bold py-3 rounded-xl transition-all">
+                    دخول اللوحة <i class="fa-solid fa-right-to-bracket mr-1"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Protected Admin Dashboard Modal -->
+    <div id="adminModal" class="fixed inset-0 bg-navy-950/95 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-navy-900 border border-gold-500/30 rounded-3xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between bg-navy-950">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-xl">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">لوحة تحكم إدارة مكتب السعدي</h3>
+                        <p class="text-xs text-slate-400">استقبال ونتائج طلبات العملاء الحقيقية</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="clearAllRequests()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">
+                        <i class="fa-solid fa-trash"></i> مسح البيانات
+                    </button>
+                    <button onclick="closeAdminPanel()" class="text-slate-400 hover:text-white text-2xl font-bold p-2">&times;</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Body -->
+            <div class="p-6 overflow-y-auto flex-1 space-y-6">
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center">
+                        <span class="text-xs text-slate-400 block mb-1">إجمالي الطلبات</span>
+                        <span id="totalRequestsCount" class="text-2xl font-black text-white">0</span>
+                    </div>
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center">
+                        <span class="text-xs text-slate-400 block mb-1">تصاريح الذهب</span>
+                        <span id="goldRequestsCount" class="text-2xl font-black text-gold-400">0</span>
+                    </div>
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center">
+                        <span class="text-xs text-slate-400 block mb-1">تأسيس الشركات</span>
+                        <span id="companyRequestsCount" class="text-2xl font-black text-blue-400">0</span>
+                    </div>
+                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center">
+                        <span class="text-xs text-slate-400 block mb-1">الجنايات والعسكري</span>
+                        <span id="militaryRequestsCount" class="text-2xl font-black text-emerald-400">0</span>
+                    </div>
+                </div>
+
+                <!-- Requests Table -->
+                <div class="border border-slate-800 rounded-2xl overflow-hidden bg-slate-950">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-right text-sm">
+                            <thead class="bg-navy-950 text-slate-400 border-b border-slate-800 text-xs">
+                                <tr>
+                                    <th class="p-4">#</th>
+                                    <th class="p-4">التاريخ والوقت</th>
+                                    <th class="p-4">اسم العميل</th>
+                                    <th class="p-4">رقم الهاتف</th>
+                                    <th class="p-4">نوع الخدمة</th>
+                                    <th class="p-4">التفاصيل</th>
+                                    <th class="p-4">المرفق</th>
+                                </tr>
+                            </thead>
+                            <tbody id="requestsTableBody" class="divide-y divide-slate-800/60 text-slate-300">
+                                <!-- Data filled dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const STORAGE_KEY = 'alsaadi_law_firm_requests';
+        const ADMIN_PASS = 'RBA525959$';
+
+        function showLoginModal() {
+            document.getElementById('adminPasswordInput').value = '';
+            document.getElementById('loginError').classList.add('hidden');
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+
+        function hideLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const enteredPass = document.getElementById('adminPasswordInput').value;
+            if (enteredPass === ADMIN_PASS) {
+                hideLoginModal();
+                document.getElementById('adminModal').classList.remove('hidden');
+                renderDashboard();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('clientName').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
+            const service = document.getElementById('serviceType').value;
+            const notes = document.getElementById('clientNotes').value.trim();
+            const fileInput = document.getElementById('clientFile');
+            
+            let fileName = 'لا يوجد';
+            if (fileInput.files.length > 0) {
+                fileName = fileInput.files[0].name;
+            }
+
+            const newRequest = {
+                id: Date.now(),
+                date: new Date().toLocaleDateString('ar-EG') + ' ' + new Date().toLocaleTimeString('ar-EG', {hour: '2-digit', minute:'2-digit'}),
+                name: name,
+                phone: phone,
+                service: service,
+                notes: notes || 'بدون ملاحظات',
+                file: fileName
+            };
+
+            const existingRequests = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            existingRequests.unshift(newRequest);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(existingRequests));
+
+            document.getElementById('clientForm').reset();
+            alert('تم إرسال طلبك بنجاح! سيتم التواصل معك من قبل إدارة مكتب السعدي.');
+            renderDashboard();
+        }
+
+        // Render Dashboard Table and Statistics
+        function renderDashboard() {
+            const requests = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            const tableBody = document.getElementById('requestsTableBody');
+            
+            tableBody.innerHTML = '';
+            document.getElementById('totalRequestsCount').innerText = requests.length;
+            
+            let companyCount = 0;
+            let goldCount = 0;
+            let militaryCount = 0;
+
+            if (requests.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="7" class="p-8 text-center text-slate-500 font-medium">لا توجد طلبات مقدمة حتى الآن.</td></tr>`;
+            } else {
+                requests.forEach((req, index) => {
+                    if (req.service.includes('شركة')) companyCount++;
+                    if (req.service.includes('ذهب')) goldCount++;
+                    if (req.service.includes('جنايات')) militaryCount++;
+
+                    const row = document.createElement('tr');
+                    row.className = 'hover:bg-slate-900/50 transition-colors';
+                    row.innerHTML = `
+                        <td class="p-4 font-bold text-slate-500">${index + 1}</td>
+                        <td class="p-4 text-xs text-slate-400">${req.date}</td>
+                        <td class="p-4 font-bold text-white">${escapeHtml(req.name)}</td>
+                        <td class="p-4 font-mono text-gold-400 font-bold">${escapeHtml(req.phone)}</td>
+                        <td class="p-4 font-semibold text-slate-200">${escapeHtml(req.service)}</td>
+                        <td class="p-4 text-xs text-slate-400 max-w-xs truncate">${escapeHtml(req.notes)}</td>
+                        <td class="p-4 text-xs">${req.file !== 'لا يوجد' ? `<span class="text-gold-400 font-bold"><i class="fa-solid fa-paperclip"></i> ${escapeHtml(req.file)}</span>` : 'لا يوجد'}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            document.getElementById('companyRequestsCount').innerText = companyCount;
+            document.getElementById('goldRequestsCount').innerText = goldCount;
+            document.getElementById('militaryRequestsCount').innerText = militaryCount;
+        }
+
+        // Clear Storage Data
+        function clearAllRequests() {
+            if (confirm('هل أنت تأكد من مسح جميع الطلبات المستلمة؟')) {
+                localStorage.removeItem(STORAGE_KEY);
+                renderDashboard();
+            }
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
