@@ -20,8 +20,13 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json().catch(() => null);
-  const username = String(body?.username ?? "").trim().toLowerCase();
-  const password = String(body?.password ?? "").trim();
+  const username = String(body?.username ?? "")
+    .replace(/[\u200B-\u200F\u202A-\u202E\u2060\uFEFF]/g, "")
+    .trim()
+    .toLowerCase();
+  const password = String(body?.password ?? "")
+    .replace(/[\u200B-\u200F\u202A-\u202E\u2060\uFEFF]/g, "")
+    .trim();
   if (!username || !password) {
     return NextResponse.json({ error: "أدخل اسم المستخدم وكلمة المرور." }, { status: 400 });
   }

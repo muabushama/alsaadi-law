@@ -20,6 +20,12 @@ function stripQuotes(value: string) {
   return value;
 }
 
+function stripInvisible(value: string) {
+  return value
+    .replace(/[\u200B-\u200F\u202A-\u202E\u2060\uFEFF]/g, "")
+    .trim();
+}
+
 function parseDotEnv(text: string) {
   const out: Record<string, string> = {};
   for (const raw of text.split(/\r?\n/)) {
@@ -57,26 +63,18 @@ function envFromFiles() {
 export function env(name: string) {
   const fromProc = processEnv()[name];
   if (fromProc != null && String(fromProc).trim() !== "") {
-    return stripQuotes(String(fromProc).trim());
+    return stripInvisible(stripQuotes(String(fromProc)));
   }
   const fromFile = envFromFiles()[name];
-  return fromFile ? fromFile.trim() : "";
+  return fromFile ? stripInvisible(fromFile) : "";
 }
 
 export function envStatus() {
-  const username = env("ADMIN_USERNAME");
-  const password = env("ADMIN_PASSWORD");
   return {
-    hasUsername: Boolean(username),
-    hasPassword: Boolean(password),
+    hasUsername: Boolean(env("ADMIN_USERNAME")),
+    hasPassword: Boolean(env("ADMIN_PASSWORD")),
     hasPasswordHash: Boolean(env("ADMIN_PASSWORD_HASH")),
     hasSecret: env("SESSION_SECRET").length >= 24,
     hasDatabase: Boolean(env("DATABASE_URL")),
-    usernameLength: username.length,
-    passwordLength: password.length,
-    usernameIsAdmin: username === "admin",
-    passwordIsAdmin4417: password === "admin4417",
-    passwordIsMasked: /^\*+$/.test(password),
-    usernameCodes: [...username].map((c) => c.charCodeAt(0)),
   };
 }
