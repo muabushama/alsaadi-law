@@ -20,8 +20,8 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json().catch(() => null);
-  const username = String(body?.username ?? "").trim();
-  const password = String(body?.password ?? "");
+  const username = String(body?.username ?? "").trim().toLowerCase();
+  const password = String(body?.password ?? "").trim();
   if (!username || !password) {
     return NextResponse.json({ error: "أدخل اسم المستخدم وكلمة المرور." }, { status: 400 });
   }
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const expectedUser = getAdminUsername();
+  const expectedUser = getAdminUsername().toLowerCase();
   const userOk = expectedUser.length > 0 && expectedUser === username;
   const passOk = await verifyAdminPassword(password);
   if (!userOk || !passOk) {

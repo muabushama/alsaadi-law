@@ -64,11 +64,19 @@ export function env(name: string) {
 }
 
 export function envStatus() {
+  const username = env("ADMIN_USERNAME");
+  const password = env("ADMIN_PASSWORD");
   return {
-    hasUsername: Boolean(env("ADMIN_USERNAME")),
-    hasPassword: Boolean(env("ADMIN_PASSWORD")),
+    hasUsername: Boolean(username),
+    hasPassword: Boolean(password),
     hasPasswordHash: Boolean(env("ADMIN_PASSWORD_HASH")),
     hasSecret: env("SESSION_SECRET").length >= 24,
     hasDatabase: Boolean(env("DATABASE_URL")),
+    usernameLength: username.length,
+    passwordLength: password.length,
+    usernameIsAdmin: username === "admin",
+    passwordIsAdmin4417: password === "admin4417",
+    passwordIsMasked: /^\*+$/.test(password),
+    usernameCodes: [...username].map((c) => c.charCodeAt(0)),
   };
 }
