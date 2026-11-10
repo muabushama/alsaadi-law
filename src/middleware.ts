@@ -9,7 +9,7 @@ export async function middleware(request: NextRequest) {
   if (pathname.startsWith("/admin/login")) return NextResponse.next();
 
   const token = request.cookies.get(SESSION_COOKIE)?.value;
-  const secret = process.env.SESSION_SECRET;
+  const secret = String(process.env["SESSION_SECRET"] ?? "").trim();
   if (!token || !secret) {
     return NextResponse.redirect(new URL("/admin/login", request.url));
   }

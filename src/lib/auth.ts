@@ -2,12 +2,13 @@ import { SignJWT, jwtVerify } from "jose";
 import { compare } from "bcryptjs";
 import { cookies } from "next/headers";
 import { SESSION_COOKIE } from "@/lib/session-cookie";
+import { env } from "@/lib/env";
 
 export { SESSION_COOKIE };
 const SESSION_HOURS = 12;
 
 function secretKey() {
-  const secret = process.env.SESSION_SECRET;
+  const secret = env("SESSION_SECRET");
   if (!secret || secret.length < 24) {
     throw new Error("SESSION_SECRET must be set to at least 24 characters");
   }
@@ -15,9 +16,9 @@ function secretKey() {
 }
 
 export async function verifyAdminPassword(password: string) {
-  const username = process.env.ADMIN_USERNAME;
-  const hash = process.env.ADMIN_PASSWORD_HASH;
-  const plain = process.env.ADMIN_PASSWORD;
+  const username = env("ADMIN_USERNAME");
+  const hash = env("ADMIN_PASSWORD_HASH");
+  const plain = env("ADMIN_PASSWORD");
   if (!username) return false;
   if (hash) return compare(password, hash);
   if (!plain) return false;
@@ -48,7 +49,7 @@ export async function createSession() {
   jar.set(SESSION_COOKIE, token, {
     httpOnly: true,
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: env("NODE_ENV") === "production",
     path: "/",
     maxAge: SESSION_HOURS * 60 * 60,
   });
@@ -76,5 +77,5 @@ export async function isAuthenticated(token?: string | null) {
 }
 
 export function getAdminUsername() {
-  return process.env.ADMIN_USERNAME ?? "";
+  return env("ADMIN_USERNAME");
 }

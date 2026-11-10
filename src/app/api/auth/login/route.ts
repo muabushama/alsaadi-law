@@ -3,7 +3,7 @@ import { createSession, getAdminUsername, verifyAdminPassword } from "@/lib/auth
 import { clientKey, rateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
-  const limited = rateLimit(clientKey(request, "login"), 8);
+  const limited = rateLimit(clientKey(request, "login"), 30, 15 * 60 * 1000);
   if (!limited.ok) {
     return NextResponse.json(
       { error: "محاولات كثيرة. حاول لاحقاً." },
@@ -19,12 +19,19 @@ export async function POST(request: Request) {
   }
 
   const expectedUser = getAdminUsername();
-  const userOk = expectedUser.length === username.length && expectedUser === username;
+  const userOk = expectedUser.length > 0 && expectedUser === username;
   const passOk = await verifyAdminPassword(password);
   if (!userOk || !passOk) {
     return NextResponse.json({ error: "بيانات الدخول غير صحيحة." }, { status: 401 });
   }
 
-  await createSession();
+  try {
+    await createSession();
+  } catch {
+    return NextResponse.json(
+      { error: "SESSION_SECRET غير مضبوط. اعمل Redeploy بعد حفظ المتغيرات." },
+      { status: 500 },
+    );
+  }
   return NextResponse.json({ ok: true });
 }

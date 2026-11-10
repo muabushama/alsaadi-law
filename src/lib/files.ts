@@ -17,7 +17,7 @@ const allowed = new Map<string, string[]>([
 ]);
 
 export function uploadDir() {
-  const custom = process.env.UPLOAD_DIR;
+  const custom = process.env["UPLOAD_DIR"];
   if (custom) {
     return path.resolve(/* turbopackIgnore: true */ custom);
   }
