@@ -1,6 +1,14 @@
 import { NextResponse } from "next/server";
 import { createSession, getAdminUsername, verifyAdminPassword } from "@/lib/auth";
+import { env, envStatus } from "@/lib/env";
 import { clientKey, rateLimit } from "@/lib/rate-limit";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+export async function GET() {
+  return NextResponse.json(envStatus());
+}
 
 export async function POST(request: Request) {
   const limited = rateLimit(clientKey(request, "login"), 30, 15 * 60 * 1000);
@@ -18,6 +26,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "أدخل اسم المستخدم وكلمة المرور." }, { status: 400 });
   }
 
+  if (!env("ADMIN_USERNAME") || (!env("ADMIN_PASSWORD") && !env("ADMIN_PASSWORD_HASH"))) {
+    return NextResponse.json(
+      {
+        error: "بيانات الأدمن غير واصلة للسيرفر. اعمل Redeploy بعد حفظ Environment variables.",
+      },
+      { status: 503 },
+    );
+  }
+
   const expectedUser = getAdminUsername();
   const userOk = expectedUser.length > 0 && expectedUser === username;
   const passOk = await verifyAdminPassword(password);
@@ -29,7 +46,7 @@ export async function POST(request: Request) {
     await createSession();
   } catch {
     return NextResponse.json(
-      { error: "SESSION_SECRET غير مضبوط. اعمل Redeploy بعد حفظ المتغيرات." },
+      { error: "SESSION_SECRET غير مضبوط أو أقصر من 24 حرف." },
       { status: 500 },
     );
   }
